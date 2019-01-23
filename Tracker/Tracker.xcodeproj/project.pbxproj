@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		102807F021F8C28300019762 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102807EF21F8C28300019762 /* AppDelegate.swift */; };
-		102807F221F8C28300019762 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102807F121F8C28300019762 /* ViewController.swift */; };
+		102807F221F8C28300019762 /* AddBirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102807F121F8C28300019762 /* AddBirthdayViewController.swift */; };
 		102807F521F8C28300019762 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 102807F321F8C28300019762 /* Main.storyboard */; };
 		102807F821F8C28300019762 /* Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 102807F621F8C28300019762 /* Tracker.xcdatamodeld */; };
 		102807FA21F8C28500019762 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 102807F921F8C28500019762 /* Assets.xcassets */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		102807EC21F8C28300019762 /* Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		102807EF21F8C28300019762 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		102807F121F8C28300019762 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		102807F121F8C28300019762 /* AddBirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBirthdayViewController.swift; sourceTree = "<group>"; };
 		102807F421F8C28300019762 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		102807F721F8C28300019762 /* Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tracker.xcdatamodel; sourceTree = "<group>"; };
 		102807F921F8C28500019762 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 		1028080721F8C64400019762 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				102807F121F8C28300019762 /* ViewController.swift */,
+				102807F121F8C28300019762 /* AddBirthdayViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -138,6 +138,7 @@
 				TargetAttributes = {
 					102807EB21F8C28300019762 = {
 						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -177,7 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				102807F221F8C28300019762 /* ViewController.swift in Sources */,
+				102807F221F8C28300019762 /* AddBirthdayViewController.swift in Sources */,
 				102807F021F8C28300019762 /* AppDelegate.swift in Sources */,
 				102807F821F8C28300019762 /* Tracker.xcdatamodeld in Sources */,
 			);
@@ -325,9 +326,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Tracker/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.birth.Tracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -340,9 +343,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Tracker/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.birth.Tracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
