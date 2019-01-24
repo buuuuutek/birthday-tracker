@@ -1,43 +1,39 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hI9-Nu-F2t">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Birthdays-->
         <scene sceneID="K2c-3B-XBH">
             <objects>
-                <tableViewController id="H2D-9d-aL6" sceneMemberID="viewController">
+                <tableViewController id="H2D-9d-aL6" customClass="BirthdaysTableViewController" customModule="Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="SAG-b0-LIL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <navigationBar key="tableFooterView" contentMode="scaleToFill" id="fF6-TH-weT">
-                            <rect key="frame" x="0.0" y="72" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                        </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="lnP-Pj-8xX" detailTextLabel="fd1-lE-akv" style="IBUITableViewCellStyleSubtitle" id="BqP-27-fdQ">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="birthdayIdentifier" textLabel="lnP-Pj-8xX" detailTextLabel="fd1-lE-akv" style="IBUITableViewCellStyleSubtitle" id="BqP-27-fdQ">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BqP-27-fdQ" id="O4r-ni-9Ci">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lnP-Pj-8xX">
-                                            <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                            <rect key="frame" x="20.000000000000004" y="5" width="33.333333333333336" height="20.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fd1-lE-akv">
-                                            <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                            <rect key="frame" x="19.999999999999996" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -53,7 +49,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Birthdays" id="J8x-R8-pHi">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Yyg-0c-Tb7"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Yyg-0c-Tb7">
+                            <connections>
+                                <action selector="addTapped:" destination="H2D-9d-aL6" id="0NA-Bq-bMi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="toAddBirthdayView" id="jzF-5Y-HpU"/>
@@ -66,48 +66,48 @@
         <!--Add birthday-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AddBirthdayViewController" customModule="Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jq0-zP-h7v"/>
                         <viewControllerLayoutGuide type="bottom" id="eS7-Mg-J4j"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asc-Wk-Ba8">
-                                <rect key="frame" x="40" y="136" width="50" height="21"/>
+                                <rect key="frame" x="40" y="160" width="144" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4P-IJ-Ox9">
-                                <rect key="frame" x="40" y="318" width="41" height="21"/>
+                                <rect key="frame" x="40" y="342" width="135" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m77-FU-W5q">
-                                <rect key="frame" x="40" y="165" width="295" height="30"/>
+                                <rect key="frame" x="40" y="189" width="334" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hnj-0s-nfV">
-                                <rect key="frame" x="40" y="256" width="295" height="30"/>
+                                <rect key="frame" x="40" y="280" width="334" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="WT8-Hv-yiO">
-                                <rect key="frame" x="0.0" y="347" width="375" height="216"/>
+                                <rect key="frame" x="0.0" y="371" width="414" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="569968164.92263997">
                                     <!--2019-01-23 20:29:24 +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="en"/>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Surname:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRd-j2-Nqt">
-                                <rect key="frame" x="40" y="227" width="73.5" height="21"/>
+                                <rect key="frame" x="40" y="251" width="163.66666666666666" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -117,7 +117,9 @@
                         <constraints>
                             <constraint firstItem="O4P-IJ-Ox9" firstAttribute="left" secondItem="8bC-Xf-vdC" secondAttribute="left" constant="40" id="8ay-OP-nyq"/>
                             <constraint firstItem="m77-FU-W5q" firstAttribute="top" secondItem="asc-Wk-Ba8" secondAttribute="bottom" constant="8" id="8kz-hb-VSo"/>
+                            <constraint firstAttribute="right" secondItem="O4P-IJ-Ox9" secondAttribute="right" constant="239" id="AEe-32-Tzc"/>
                             <constraint firstItem="m77-FU-W5q" firstAttribute="left" secondItem="8bC-Xf-vdC" secondAttribute="left" constant="40" id="Afk-bk-vIt"/>
+                            <constraint firstAttribute="right" secondItem="asc-Wk-Ba8" secondAttribute="right" constant="230" id="E6y-44-hAp"/>
                             <constraint firstItem="O4P-IJ-Ox9" firstAttribute="top" secondItem="hnj-0s-nfV" secondAttribute="bottom" constant="32" id="HcQ-vI-Up4"/>
                             <constraint firstItem="WT8-Hv-yiO" firstAttribute="top" secondItem="O4P-IJ-Ox9" secondAttribute="bottom" constant="8" id="PRj-e4-Nuc"/>
                             <constraint firstItem="TRd-j2-Nqt" firstAttribute="left" secondItem="8bC-Xf-vdC" secondAttribute="left" constant="40" id="PdO-oL-9sc"/>
@@ -130,12 +132,26 @@
                             <constraint firstItem="hnj-0s-nfV" firstAttribute="top" secondItem="TRd-j2-Nqt" secondAttribute="bottom" constant="8" id="g47-zg-xFK"/>
                             <constraint firstItem="asc-Wk-Ba8" firstAttribute="left" secondItem="8bC-Xf-vdC" secondAttribute="left" constant="40" id="kSu-92-BUl"/>
                             <constraint firstItem="hnj-0s-nfV" firstAttribute="left" secondItem="8bC-Xf-vdC" secondAttribute="left" constant="40" id="rki-dp-b4Z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TRd-j2-Nqt" secondAttribute="trailing" constant="190.5" id="rtU-Sf-XzR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add birthday" id="AAQ-L8-l9v">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="nt4-zT-rto"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="uTr-Ay-AyP"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="nt4-zT-rto">
+                            <connections>
+                                <action selector="cancelTapped:" destination="BYZ-38-t0r" id="y0G-LC-NOC"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="uTr-Ay-AyP">
+                            <connections>
+                                <action selector="saveTapped:" destination="BYZ-38-t0r" id="tw2-M5-tkz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="birthdatePicker" destination="WT8-Hv-yiO" id="RZT-Ki-756"/>
+                        <outlet property="firstNameTextField" destination="m77-FU-W5q" id="uWm-cY-9eo"/>
+                        <outlet property="lastNameTextField" destination="hnj-0s-nfV" id="nxu-IF-vXO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -147,7 +163,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hI9-Nu-F2t" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uai-18-cJD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

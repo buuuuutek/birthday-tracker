@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "BirthdaysTableViewController.tableView(_:cellForRowAt:):BirthdaysTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "dateFormatter.string(from: birthdate)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
