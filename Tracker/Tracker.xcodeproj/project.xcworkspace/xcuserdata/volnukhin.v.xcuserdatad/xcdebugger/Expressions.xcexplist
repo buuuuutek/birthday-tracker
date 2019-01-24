@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "UIViewController.loadContext&lt;A&gt;(for:):UIViewController+Extension.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "type(of: Birthday.self) as! NSManagedObject">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "BirthdaysTableViewController.tableView(_:cellForRowAt:):BirthdaysTableViewController.swift">
          <PersistentStrings>
             <PersistentString

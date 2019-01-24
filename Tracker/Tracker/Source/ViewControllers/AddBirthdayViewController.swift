@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import CoreData
 
 class AddBirthdayViewController: UIViewController {
     
@@ -15,13 +14,20 @@ class AddBirthdayViewController: UIViewController {
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var birthdatePicker: UIDatePicker!
+    
+    
+    // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
+        birthdatePicker.maximumDate = Date()
+    }
 
     
     // MARK: - Button actions
     
     @IBAction func saveTapped(_ sender: UIBarButtonItem) {
         writeNewDataToContext()
-        saveNewContext()
+        saveContext()
         goBackToTableView()
     }
     
@@ -40,21 +46,13 @@ class AddBirthdayViewController: UIViewController {
         newBirthday.birthdayId = UUID()
     }
     
-    private func saveNewContext() {
-        do {
-            try context.save()
-        }
-        catch {
-            print(error.localizedDescription)
-        }
-    }
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
     
     
     // MARK: - Navigation
+    
     private func goBackToTableView() {
         navigationController?.popViewController(animated: true)
     }

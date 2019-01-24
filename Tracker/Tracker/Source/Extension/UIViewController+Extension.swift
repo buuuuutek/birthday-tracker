@@ -11,6 +11,8 @@ import CoreData
 
 extension UIViewController {
     
+    // MARK: - Property
+    
     var context: NSManagedObjectContext {
         get {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -18,4 +20,25 @@ extension UIViewController {
         }
     }
     
+    // MARK: - Functions
+    
+    func loadContext() -> [Birthday] {
+        let fetchRequest = Birthday.fetchRequest() as NSFetchRequest<Birthday>
+        do {
+            return try context.fetch(fetchRequest)
+        }
+        catch {
+            print("Loading data from context was finished with error: " + error.localizedDescription)
+            return []
+        }
+    }
+    
+    func saveContext() {
+        do {
+            try context.save()
+        }
+        catch {
+            print("Saving data to context was finished with error: " + error.localizedDescription)
+        }
+    }
 }

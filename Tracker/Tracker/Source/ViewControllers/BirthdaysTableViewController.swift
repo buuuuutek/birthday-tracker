@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import CoreData
 
 class BirthdaysTableViewController: UITableViewController {
     
@@ -20,19 +19,15 @@ class BirthdaysTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         dateFormatter.dateStyle = .full
         dateFormatter.timeStyle = .none
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let fetchRequest = Birthday.fetchRequest() as NSFetchRequest<Birthday>
-        do {
-            birthdays = try context.fetch(fetchRequest)
-        }
-        catch {
-            print(error.localizedDescription)
-        }
+        
+        birthdays = loadContext()
         tableView.reloadData()
     }
 
@@ -50,7 +45,6 @@ class BirthdaysTableViewController: UITableViewController {
         return birthdays.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "birthdayIdentifier", for: indexPath)
         
@@ -69,4 +63,16 @@ class BirthdaysTableViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if birthdays.count > indexPath.row {
+            context.delete(birthdays[indexPath.row])
+            birthdays.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            saveContext()
+        }
+    }
 }
